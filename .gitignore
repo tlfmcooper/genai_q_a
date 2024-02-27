@@ -1,0 +1,5 @@
+secrets.toml
+.env
+interview.py
+.vscode
+env
