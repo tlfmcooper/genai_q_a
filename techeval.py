@@ -40,9 +40,9 @@ def ingest_load_data():
 , system_prompt="You are a seasoned AI research scientist with over 20 years of experience and your job is to answer technical questions about interviews. If the questions is not included in the context, please provide an answer based on general knowledge."))
             index = VectorStoreIndex.from_documents(docs, service_context=service_context, storage_context=storage_context, embed_model=GeminiEmbedding(model_name="models/embedding-001")
 )
-            storage_context.persist(persist_dir="questions")
+            storage_context.persist(persist_dir="qna")
     if index is None:
-        storage_context = StorageContext.from_defaults(persist_dir="questions")
+        storage_context = StorageContext.from_defaults(persist_dir="qna")
         index = load_index_from_storage(storage_context, embed_model=GeminiEmbedding(model_name="models/embedding-001")
 )
         
