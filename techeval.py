@@ -26,7 +26,7 @@ if "messages" not in st.session_state.keys(): # Initialize the chat messages his
         {"role": "assistant", "content": "Ask me a question about Technical Interviews for data scientist roles!"}
     ]
 
-
+@st.cache_resource(show_spinner=False)
 def ingest_load_data():
     index = None
     with st.spinner(text="Loading and indexing the interviews – hang tight! This should take 1-2 minutes."):
