@@ -30,7 +30,7 @@ def ingest_load_data():
         if len(input_files)>=1:
             reader = SimpleDirectoryReader(input_files=input_files, recursive=True)
             docs = reader.load_data()
-            service_context = ServiceContext.from_defaults(llm=Gemini(model="models/gemini-pro", temperature=0.5, system_prompt="You are a seasoned AI research scientist with over 20 years of experience and your job is to answer technical questions about interviews. If the questions is not included in the context, please provide an answer based on general knowledge."))
+            service_context = ServiceContext.from_defaults(llm=Gemini(model="models/gemini-pro", temperature=0.5, embed_model="local", system_prompt="You are a seasoned AI research scientist with over 20 years of experience and your job is to answer technical questions about interviews. If the questions is not included in the context, please provide an answer based on general knowledge."))
             index = VectorStoreIndex.from_documents(docs, service_context=service_context, storage_context=storage_context)
             storage_context.persist(persist_dir="questions")
     if index is None:
