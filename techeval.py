@@ -3,6 +3,11 @@ from llama_index.core import VectorStoreIndex, ServiceContext, SimpleDirectoryRe
 from llama_index.core import load_index_from_storage,StorageContext
 from llama_index.core import Settings
 from llama_index.llms.gemini import Gemini
+from llama_index.embeddings.gemini import GeminiEmbedding
+from llama_index.core import Settings
+
+# global
+Settings.embed_model = GeminiEmbedding(model_name="models/embedding-001")
 from glob import glob
 
 
@@ -30,12 +35,15 @@ def ingest_load_data():
         if len(input_files)>=1:
             reader = SimpleDirectoryReader(input_files=input_files, recursive=True)
             docs = reader.load_data()
-            service_context = ServiceContext.from_defaults(llm=Gemini(model="models/gemini-pro", temperature=0.5, embed_model="local", system_prompt="You are a seasoned AI research scientist with over 20 years of experience and your job is to answer technical questions about interviews. If the questions is not included in the context, please provide an answer based on general knowledge."))
-            index = VectorStoreIndex.from_documents(docs, service_context=service_context, storage_context=storage_context)
+            service_context = ServiceContext.from_defaults(llm=Gemini(model="models/gemini-pro", temperature=0.5, embed_model=GeminiEmbedding(model_name="models/embedding-001")
+, system_prompt="You are a seasoned AI research scientist with over 20 years of experience and your job is to answer technical questions about interviews. If the questions is not included in the context, please provide an answer based on general knowledge."))
+            index = VectorStoreIndex.from_documents(docs, service_context=service_context, storage_context=storage_context, embed_model=GeminiEmbedding(model_name="models/embedding-001")
+)
             storage_context.persist(persist_dir="questions")
     if index is None:
         storage_context = StorageContext.from_defaults(persist_dir="questions")
-        index = load_index_from_storage(storage_context)
+        index = load_index_from_storage(storage_context, embed_model=GeminiEmbedding(model_name="models/embedding-001")
+)
         
     return index
 
