@@ -3,3 +3,5 @@ secrets.toml
 interview.py
 .vscode
 env
+*.mp3
+*.mp4
