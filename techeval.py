@@ -13,6 +13,7 @@ from glob import glob
 
 st.set_page_config(page_title="Chat with AI research Scientist, powered by LlamaIndex", page_icon="🦙", layout="centered", initial_sidebar_state="auto", menu_items=None)
 Settings.chunk_size = 512
+Settings.llm= Gemini(model="models/gemini-pro")
 
 
 GOOGLE_API_KEY = st.secrets.GOOGLE_API_KEY #For streamlit cloud only
