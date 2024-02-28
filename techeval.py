@@ -30,7 +30,7 @@ if "messages" not in st.session_state.keys(): # Initialize the chat messages his
 def ingest_load_data():
     index = None
     with st.spinner(text="Loading and indexing the interviews – hang tight! This should take 1-2 minutes."):
-        input_files = glob("./*.mp4")
+        input_files = glob("./*.mp3")
         print("input files is:", input_files)
         storage_context = StorageContext.from_defaults()
         if len(input_files)>=1:
