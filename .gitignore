@@ -12,3 +12,4 @@ interview.pkl
 presentation.pptx
 interviews.ipynb
 __pycache__/
+.streamlit
