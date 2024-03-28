@@ -1,8 +1,14 @@
 secrets.toml
 .env
-interview.py
+utils.py
 .vscode
 env
 *.mp3
 *.mp4
 interviews.ipynb
+.interview
+data\
+interview.pkl
+presentation.pptx
+interviews.ipynb
+__pycache__/
