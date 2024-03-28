@@ -3,6 +3,7 @@ llama-index-llms-gemini
 llama-index-embeddings-gemini
 google-generativeai
 pydub
+mutagen
 git+https://github.com/openai/whisper.git
 streamlit
 
