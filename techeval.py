@@ -1,21 +1,15 @@
 import streamlit as st
 from llama_index.core import VectorStoreIndex
 from llama_index.core import Settings
-from llama_index.embeddings.gemini import GeminiEmbedding
-from llama_index.core import Settings
 import os
 from dotenv import load_dotenv
 from llama_index.embeddings.openai import OpenAIEmbedding
 from llama_index.llms.openai import OpenAI
 from llama_index.core.settings import Settings
-# Use this line of code if you have a local .env file
 from pinecone import Pinecone
-# initialize without metadata filter
 from llama_index.vector_stores.pinecone import PineconeVectorStore
 from llama_index.core.postprocessor import MetadataReplacementPostProcessor
 from llama_index.core.postprocessor import SentenceTransformerRerank
-from llama_index.core import VectorStoreIndex
-from IPython.display import Markdown, display
 from messages import *
 load_dotenv() 
 
