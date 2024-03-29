@@ -31,8 +31,8 @@ OPENAI_API_KEY=os.environ["OPENAI_API_KEY"]
 
 
 # Add this to streamlit configuration
-OPENAI_API_KEY = st.secrets.OPENAI_API_KEY #For streamlit cloud only
-PINECONE_API_KEY= st.secrets.PINECONE_API_KEY #For streamlit cloud only
+#OPENAI_API_KEY = st.secrets.OPENAI_API_KEY #For streamlit cloud only
+#PINECONE_API_KEY= st.secrets.PINECONE_API_KEY #For streamlit cloud only
 
 st.title("Chat with the AI Scientist, powered by LlamaIndex 💬🦙")
 
