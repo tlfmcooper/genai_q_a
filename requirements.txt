@@ -6,4 +6,4 @@ pydub
 mutagen
 git+https://github.com/openai/whisper.git
 streamlit
-
+python-dotenv
