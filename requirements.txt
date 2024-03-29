@@ -3,6 +3,7 @@ llama-index-llms-openai
 llama-index-embeddings-openai
 pinecone-client
 llama-index-vector-stores-pinecone
+torch
 sentence-transformers
 pydub
 mutagen
