@@ -79,7 +79,6 @@ with st.sidebar:
     )
 
     st.header("Example Questions")
-    st.markdown("- Who was the interviewee for the CVS interview?")
     for question in questions:
         st.markdown(f"- {question}")
 
