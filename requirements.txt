@@ -2,6 +2,7 @@ llama-index
 llama-index-llms-openai
 llama-index-embeddings-openai
 pinecone-client
+llama-index-vector-stores-pinecone
 pydub
 mutagen
 git+https://github.com/openai/whisper.git
