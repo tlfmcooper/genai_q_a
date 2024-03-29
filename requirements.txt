@@ -1,7 +1,7 @@
 llama-index
-llama-index-llms-gemini
-llama-index-embeddings-gemini
-google-generativeai
+llama-index-llms-openai
+llama-index-embeddings-openai
+pinecone
 pydub
 mutagen
 git+https://github.com/openai/whisper.git
